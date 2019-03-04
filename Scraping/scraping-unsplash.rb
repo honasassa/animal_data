@@ -104,9 +104,16 @@ end
 target = ["Cat", "Chicken", "Bear", "Pig",
 "Lion", "Snake", "Wolf", "Rabbit", "Deer", "Horse", "Cow", "Monkey", 
 "Ape", "Eagle", "Dolphin", "Tiger", "Elephant", "Turtle", "Jellyfish", "Giraffe'",
-"Dog", "Fish"]
+"Puppy" ]
 
-# exclude: "Bird", "Animal", "Wildlife"
+# suggest: mammal, puppy
+
+# collection
+
+# mammal 50.3k
+# dog 19.5k
+# puppy 2.1k
+# exclude: "Bird", "Animal", "Wildlife", "Fish" "dog"
 
 target.each do |t| 
   puts t
