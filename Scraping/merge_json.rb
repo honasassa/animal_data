@@ -4,8 +4,6 @@ files = Dir.entries(".")
 
 targets = files.select {|f| f.end_with?(".json")}
 targets = targets.reject {|f| f == "db.json"}
-targets = targets.reject {|f| f == "Animal.json"}
-
 
 puts targets.length
 
