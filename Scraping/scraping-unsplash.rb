@@ -36,7 +36,10 @@ class Scraping
       @results += result 
     }
 
+    puts "before remove duplicats"
     puts @results.length
+    puts "remove duplicates"
+    puts @results!.uniq! { |h| h["id"] }
     puts "finish scraping!, crawled data #{@results.length}"
 
     ## TODO: remove duplicate ?
