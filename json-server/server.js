@@ -11,7 +11,7 @@ server.use(middlewares);
 
 // https://github.com/request/request
 var request = require('request')
-var opts = { url: 'https://raw.githubusercontent.com/kkkkkt/animal_data/master/db.json', json: true }
+var opts = { url: 'https://raw.githubusercontent.com/kkkkkt/animal_data/master/db2.json', json: true }
 
 request(opts, function (error, response, body) {
   if (error) throw error
