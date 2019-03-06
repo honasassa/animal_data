@@ -59,13 +59,6 @@ class Scraping
   end
 
   def format_results
-    # {
-    #   query: @query,
-    #   total: @total,
-    #   total_pages: @total_pages,
-    #   results: @results
-    # }
-
     @results.map! do |x|
       {
         id: x["id"],
@@ -111,7 +104,7 @@ end
 # "Ape", "Eagle", "Dolphin", "Tiger", "Elephant", "Turtle", "Jellyfish", "Giraffe",
 # "Puppy" ]
 
-target = ["Giraffe", "Kangaroo", "Fox"]
+target = ["Giraffe", "Kangaroo", "Fox", "Frog"]
 
 # suggest: mammal, puppy
 
@@ -124,9 +117,9 @@ target = ["Giraffe", "Kangaroo", "Fox"]
 
 target.each do |t| 
   puts t
-#  unless File.exist?("#{t}.json") 
+  unless File.exist?("#{t}.json") 
     puts "not exist"
     scrape = Scraping.new(t);
     scrape.scrape    
-#  end
+  end
 end 
