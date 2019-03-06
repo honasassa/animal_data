@@ -36,13 +36,15 @@ class Scraping
       @results += result 
     }
 
+    puts "before likes curation"
+    @results.select! {|d| d['likes'] >= 10}
+    puts "after likes curation"
+
     puts "before remove duplicats"
     puts @results.length
     puts "remove duplicates"
-    puts @results!.uniq! { |h| h["id"] }
+    @results.uniq! { |h| h["id"] }
     puts "finish scraping!, crawled data #{@results.length}"
-
-    ## TODO: remove duplicate ?
 
     save_data_to_file
   end
@@ -104,10 +106,12 @@ end
 #scrape.scrape
 
 
-target = ["Cat", "Chicken", "Bear", "Pig",
-"Lion", "Snake", "Wolf", "Rabbit", "Deer", "Horse", "Cow", "Monkey", 
-"Ape", "Eagle", "Dolphin", "Tiger", "Elephant", "Turtle", "Jellyfish", "Giraffe'",
-"Puppy" ]
+# target = ["Cat", "Chicken", "Bear", "Pig",
+# "Lion", "Snake", "Wolf", "Rabbit", "Deer", "Horse", "Cow", "Monkey", 
+# "Ape", "Eagle", "Dolphin", "Tiger", "Elephant", "Turtle", "Jellyfish", "Giraffe",
+# "Puppy" ]
+
+target = ["Giraffe", "Kangaroo", "Fox"]
 
 # suggest: mammal, puppy
 
@@ -120,9 +124,9 @@ target = ["Cat", "Chicken", "Bear", "Pig",
 
 target.each do |t| 
   puts t
-  unless File.exist?("#{t}.json") 
+#  unless File.exist?("#{t}.json") 
     puts "not exist"
     scrape = Scraping.new(t);
     scrape.scrape    
-  end
+#  end
 end 
