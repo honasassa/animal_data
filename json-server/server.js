@@ -16,8 +16,6 @@ var opts = { url: 'https://raw.githubusercontent.com/kkkkkt/animal_data/master/d
 request(opts, function (error, response, body) {
   if (error) throw error
   const router = jsonServer.router(body);
-  console.log(Object.keys(response));
-
   visitor.pageview("/").send(); 
 
   server.use(router)
