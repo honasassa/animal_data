@@ -1,7 +1,6 @@
 {
   "version": 1,
-  "alias": ["animalish.now.sh"],
-  "regions": ["sfo1"],
+  "alias": ["animalish.now.sh", "animal.nyan-tech.com"],
   "scale": {
     "sfo1": {
       "min": 1,
